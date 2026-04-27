@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本文化測驗</title>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('images/sakura_background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #c72c4b;
+            font-family: 'Sawarabi Gothic', sans-serif;
+            position: relative;
+        }
+        h1:after {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 4px;
+            background: #f8b400;
+            margin: 10px auto;
+        }
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-left: 10px solid #c72c4b;
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        .question {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px dotted #c72c4b;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #c72c4b;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #a12b38;
+            transform: translateY(-2px);
+        }
+        .result {
+            display: none;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #c72c4b;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+            padding: 10px 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>日本文化測驗</h1>
+    
+    <section id="quiz">
+        <div class="question">
+            <p>問題 1: 日本的國旗上有什麼圖案？</p>
+            <input type="radio" name="q1" value="B"> B) 紅色的圓圈<br>
+            <input type="radio" name="q1" value="A"> A) 白色的櫻桃<br>
+            <input type="radio" name="q1" value="C"> C) 藍色的方形<br>
+            <input type="radio" name="q1" value="D"> D) 綠色的樹葉<br>
+        </div>
+
+        <div class="question">
+            <p>問題 2: 日本的傳統服裝叫什麼？</p>
+            <input type="radio" name="q2" value="A"> A) Kimono<br>
+            <input type="radio" name="q2" value="B"> B) Hanbok<br>
+            <input type="radio" name="q2" value="C"> C) Cheongsam<br>
+            <input type="radio" name="q2" value="D"> D) Sari<br>
+        </div>
+
+        <div class="question">
+            <p>問題 3: 日本的茶道主要是以什麼為中心？</p>
+            <input type="radio" name="q3" value="B"> B) 茶<br>
+            <input type="radio" name="q3" value="A"> A) 咖啡<br>
+            <input type="radio" name="q3" value="C"> C) 酒<br>
+            <input type="radio" name="q3" value="D"> D) 水<br>
+        </div>
+
+        <div class="question">
+            <p>問題 4: 下列哪一項是日本的傳統節日？</p>
+            <input type="radio" name="q4" value="C"> C) 七夕<br>
+            <input type="radio" name="q4" value="A"> A) 感恩節<br>
+            <input type="radio" name="q4" value="B"> B) 農曆新年<br>
+            <input type="radio" name="q4" value="D"> D) 聖誕節<br>
+        </div>
+
+        <div class="question">
+            <p>問題 5: 日本的主要宗教是什麼？</p>
+            <input type="radio" name="q5" value="B"> B) 佛教與神道<br>
+            <input type="radio" name="q5" value="A"> A) 基督教<br>
+            <input type="radio" name="q5" value="C"> C) 伊斯蘭教<br>
+            <input type="radio" name="q5" value="D"> D) 道教<br>
+        </div>
+
+        <div class="question">
+            <p>問題 6: 日本的典型料理"壽司"主要由什麼材料組成？</p>
+            <input type="radio" name="q6" value="A"> A) 米飯和魚<br>
+            <input type="radio" name="q6" value="B"> B) 麵條和肉<br>
+            <input type="radio" name="q6" value="C"> C) 豆腐和菜<br>
+            <input type="radio" name="q6" value="D"> D) 米飯和豆腐<br>
+        </div>
+
+        <div class="question">
+            <p>問題 7: "浮世繪"是什麼？</p>
+            <input type="radio" name="q7" value="B"> B) 一種日本繪畫風格<br>
+            <input type="radio" name="q7" value="A"> A) 一種傳統的日本音樂<br>
+            <input type="radio" name="q7" value="C"> C) 一種日本舞蹈<br>
+            <input type="radio" name="q7" value="D"> D) 一種日本茶<br>
+        </div>
+
+        <div class="question">
+            <p>問題 8: 日本著名的"櫻花"主要在什麼時間盛開？</p>
+            <input type="radio" name="q8" value="B"> B) 春季<br>
+            <input type="radio" name="q8" value="A"> A) 冬季<br>
+            <input type="radio" name="q8" value="C"> C) 夏季<br>
+            <input type="radio" name="q8" value="D"> D) 秋季<br>
+        </div>
+
+        <button onclick="submitAnswers()">提交答案</button>
+    </section>
+
+    <div class="result" id="result">
+        <h3>測驗結果</h3>
+        <p id="scoreResult"></p>
+    </div>
+
+    <footer>
+        <p>感謝您參加測驗！</p>
+    </footer>
+
+    <script>
+        function submitAnswers() {
+            let score = 0;
+
+            const answers = {
+                q1: "B",
+                q2: "A",
+                q3: "B",
+                q4: "C",
+                q5: "B",
+                q6: "A",
+                q7: "B",
+                q8: "B"
+            };
+
+            for (let i = 1; i <= 8; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("scoreResult").innerText = `您的分數是: ${score} / 8`;
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
