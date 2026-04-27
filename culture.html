@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>日本語を学ぶ - 文化學習</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #2D4059;
+      --vermilion: #E63946;
+      --teal:      #00C4B4;
+      --orange:    #FF9500;
+      --offwhite:  #F8F5F2;
+      --lightgray: #E5E5E5;
+      --darktext:  #212529;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', system-ui, sans-serif;
+      background: var(--offwhite);
+      color: var(--darktext);
+      line-height: 1.7;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: var(--navy);
+      color: white;
+      height: 76px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { font-size: 1.65rem; font-weight: 700; color: white; }
+
+    .streak {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 149, 0, 0.15);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .streak .flame { font-size: 1.4rem; }
+
+    .nav-icons a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 500;
+    }
+    .nav-icons a:hover { color: var(--vermilion); }
+
+    .hero {
+      background: linear-gradient(135deg, #2D4059 0%, #1E5A7A 100%);
+      color: white;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.0rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.35rem;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      opacity: 0.95;
+    }
+
+    .categories {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--navy);
+      margin-bottom: 60px;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .culture-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
+    }
+
+    .culture-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 45px rgba(45,64,89,0.18);
+    }
+
+    .card-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .card-content {
+      padding: 28px;
+    }
+
+    .card-content h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+    }
+
+    .vocab-list {
+      margin-top: 16px;
+      font-size: 1.05rem;
+      color: #555;
+    }
+
+    .btn-add {
+      margin-top: 20px;
+      padding: 12px 32px;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">日本語を学ぶ</div>
+      <div class="streak">
+        <span class="flame">🔥</span>
+        <span>12 天連勝中！</span>
+      </div>
+      <div class="nav-icons">
+        <a href="index.html">首頁</a>
+        <a href="culture.html" class="current">文化學習</a>
+        <a href="resources.html">資源中心</a>
+        <a href="vocab.html">單詞學習</a>
+        <a href="dashboard.html">學習儀表板</a>
+        <a href="download.html">下載 App</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>文化學習</h1>
+      <p>透過日本文化，深入理解並記住最道地的日本語</p>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-title">探索日本文化主題</h2>
+      <div class="grid">
+        <div class="culture-card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80');">
+            <span class="tag" style="background: var(--orange);">季節</span>
+          </div>
+          <div class="card-content">
+            <h3>櫻花季與花見文化</h3>
+            <p>學習賞櫻時的實用對話與禮儀</p>
+            <div class="vocab-list">
+              • 桜（さくら）<br>
+              • 花見（はなみ）<br>
+              • お弁当（おべんとう）
+            </div>
+            <button class="btn-add">加入單詞卡 + 閱讀文章</button>
+          </div>
+        </div>
+
+        <div class="culture-card">
+          <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80');">
+            <span class="tag" style="background: var(--teal);">茶道</span>
+          </div>
+          <div class="card-content">
+            <h3>日本茶道與抹茶文化</h3>
+            <p>理解茶道中的敬語與傳統禮儀</p>
+            <div class="vocab-list">
+              • お茶（おちゃ）<br>
+              • 抹茶（まっちゃ）
+            </div>
+            <button class="btn-add">加入單詞卡 + 觀看影片</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="font-size:1.45rem; margin-bottom:24px;">文化是語言的靈魂，一起在日本文化中成長吧 🌸</p>
+      <p>© 2026 日本語を学ぶ All Rights Reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>

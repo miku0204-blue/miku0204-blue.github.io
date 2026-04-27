@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>日本語を学ぶ - 單詞學習</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #2D4059;
+      --vermilion: #E63946;
+      --teal:      #00C4B4;
+      --orange:    #FF9500;
+      --offwhite:  #F8F5F2;
+      --lightgray: #E5E5E5;
+      --darktext:  #212529;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', system-ui, sans-serif;
+      background: var(--offwhite);
+      color: var(--darktext);
+      line-height: 1.7;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      background: var(--navy);
+      color: white;
+      height: 76px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { font-size: 1.65rem; font-weight: 700; color: white; }
+
+    .streak {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 149, 0, 0.15);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 500;
+    }
+
+    .streak .flame { font-size: 1.4rem; }
+
+    .nav-icons a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: 500;
+    }
+    .nav-icons a:hover { color: var(--vermilion); }
+
+    .hero {
+      background: linear-gradient(135deg, #2D4059 0%, #1E5A7A 100%);
+      color: white;
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.0rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.35rem;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      opacity: 0.95;
+    }
+
+    .level-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .level-tab {
+      padding: 12px 28px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 50px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .level-tab.active {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .vocab-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: all 0.35s ease;
+    }
+
+    .vocab-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 45px rgba(45,64,89,0.18);
+    }
+
+    .card-front {
+      height: 160px;
+      background: linear-gradient(135deg, var(--teal), var(--orange));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .kana {
+      font-size: 1.15rem;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .meaning {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .cultural-tip {
+      font-size: 0.95rem;
+      color: #666;
+      background: #f8f5f2;
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    .btn-practice {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: var(--vermilion);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">日本語を学ぶ</div>
+      <div class="streak">
+        <span class="flame">🔥</span>
+        <span>12 天連勝中！</span>
+      </div>
+      <div class="nav-icons">
+        <a href="index.html">首頁</a>
+        <a href="culture.html">文化學習</a>
+        <a href="resources.html">資源中心</a>
+        <a href="vocab.html" class="current">單詞學習</a>
+        <a href="dashboard.html">學習儀表板</a>
+        <a href="download.html">下載 App</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>單詞學習</h1>
+      <p>智能單詞卡 + 文化情境練習<br>從 N5 到 N1，逐步掌握地道日本語</p>
+    </div>
+  </section>
+
+  <section class="level-section" style="padding:60px 0; background:white;">
+    <div class="container">
+      <h2 class="section-title">選擇你的學習等級</h2>
+      <div class="level-tabs">
+        <div class="level-tab active">N5 基礎</div>
+        <div class="level-tab">N4 初級</div>
+        <div class="level-tab">N3 中級</div>
+        <div class="level-tab">N2 高級</div>
+        <div class="level-tab">N1 頂級</div>
+      </div>
+
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="card-front">こんにちは</div>
+          <div class="card-content">
+            <h3>こんにちは</h3>
+            <div class="kana">Konnichiwa</div>
+            <div class="meaning">你好（白天使用）</div>
+            <div class="cultural-tip">日本日常最常用招呼語。</div>
+            <button class="btn-practice">開始練習</button>
+          </div>
+        </div>
+        <!-- 可繼續增加更多卡片 -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="font-size:1.45rem; margin-bottom:24px;">在單詞森林中，一步一步變得更強大 🌳</p>
+      <p>© 2026 日本語を学ぶ All Rights Reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>
